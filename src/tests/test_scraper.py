@@ -7,7 +7,7 @@ def test_login_to_dashboard():
     scraper = Scraper()
     try:
         # Perform the login
-        page_title = scraper.login_to_website(headless=False)
+        page_title = scraper.login_to_website(headless=True)
         
         assert "PowerCo - Customer Dashboard" in page_title, \
             f"Expected 'PowerCo - Customer Dashboard' but got '{page_title}'"
@@ -18,7 +18,7 @@ def test_extract_account_cards():
     """Tests if account cards within the grid container are correctly extracted."""
     scraper = Scraper()
     try:
-        scraper.start_browser(headless=False)
+        scraper.start_browser(headless=True)
         scraper.navigate_to_login()
         scraper.perform_login()
 
@@ -47,7 +47,7 @@ def test_download_latest_bills_from_cards():
     scraper = Scraper()
 
     try:
-        scraper.start_browser(headless=False)
+        scraper.start_browser(headless=True)
         scraper.navigate_to_login()
         scraper.perform_login()
 
@@ -72,7 +72,7 @@ def test_download_all_statements():
     """
     scraper = Scraper()
     try:
-        scraper.start_browser(headless=False)
+        scraper.start_browser(headless=True)
         scraper.navigate_to_login()
         scraper.perform_login()
 
@@ -92,7 +92,7 @@ def test_json_file_creation_without_bill_link():
     """
     scraper = Scraper()
     try:
-        scraper.start_browser(headless=False)
+        scraper.start_browser(headless=True)
         scraper.navigate_to_login()
         scraper.perform_login()
 
@@ -132,7 +132,7 @@ def test_download_statements_across_multiple_pages():
     scraper = Scraper()
 
     try:
-        scraper.start_browser(headless=False)
+        scraper.start_browser(headless=True)
         scraper.navigate_to_login()
         scraper.perform_login()
 
